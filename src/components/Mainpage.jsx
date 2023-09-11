@@ -2,6 +2,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import RBGLogo from '../assets/images/RBG-login-page.png';
 import Wishfor from '../assets/images/wishfor-landing.png';
+import waveEmoji from '../assets/images/wave-emoji.png';
+import chatBubble from '../assets/images/chat_emoji.png';
 import { Link } from 'react-router-dom';
 
 const Main = () => {
@@ -24,8 +26,8 @@ const Main = () => {
             <header className='tag'>
                 <div className='intro-section text-white d-flex flex-column align-items-center'>
                     <div>
-                        <h1 className="hello-world">Hello, world! My name is</h1>
-                        <h1 className='name'>Rheanne Bande </h1>
+                        <h1 className="hello-world">Hello, world!<img src={waveEmoji} alt='wave emoji' className='emoji mx-2' /></h1>
+                        <h1 className='name'>I'm Rheanne Bande </h1>
                         <h1 className='intro-3rd-row mb-4' style={{color: "#28104E"}}>I am a <span className='gradient-text'>Software Developer</span></h1>
                         <p className='small-bio mb-4'>Healthcare transitioned Software Developer based in Bay Area, CA specializing in Front End Development</p>
                         <div className='d-flex justify-content-center align-items-center mb-4'>
@@ -55,7 +57,7 @@ const Main = () => {
                 </div>
             </header>
             <section className="tag">
-                <h1>About</h1>
+                <h1 className='section-title'>About</h1>
                 <div className='about-paragraph'>
                     <p>Hello! My name is Rheanne and I enjoy building websites to showcase to others! I'm a healthcare turned software engineer after I decided to try programming through various online resources. I attended Coding Dojo, a fullstack software engineering bootcamp that helped guide me to kickstart my career in tech. </p>
                     <p>When I'm not in front of a computer, I enjoy being outdoors, bowling, gaming, or spending time with my friends, family, cats and reptile.</p>
@@ -71,7 +73,7 @@ const Main = () => {
                     </ul>
                 </div>
             </section>
-            <h1 className='text-white mx-4'>Projects</h1>
+            <h1 className='section-title text-white mx-4'>Projects</h1>
             <section id="project1">
                 <div className='project-container'>
                     <div className='project-desc-container'>
@@ -101,7 +103,7 @@ const Main = () => {
                             <li className='mb-3'>+ Vite</li>
                             <li className='mb-3'>+ MERN</li>
                             <li className='mb-3'>+ Balsamiq</li>
-                            <li className='mb-3'>+ Bootstrap</li>
+                            <li className='mb-5'>+ Bootstrap</li>
                             <li><button className='github-repo-btn'>Github Repo</button></li>
                         </ul>
                     </div>
@@ -110,7 +112,14 @@ const Main = () => {
                     </div>
                 </div>
             </section>
-            <section><h1>Lets Chat</h1><p>Thanks for taking the time to get to know me! Please feel free to reach out through my socials if you're interested</p></section>
+            <section className='contact-section'>
+                <h1 className='contact-header d-flex align-items-center mb-3'>Lets Chat<img src={chatBubble} alt="chat bubble" className="chat-emoji" /></h1>
+                <p className='contact-text'>Thanks for taking the time to get to know me! Please feel free to reach out through my socials if you're interested in connecting</p>
+                <div className='d-flex flex-row'>
+                    <Link to={"https://www.linkedin.com/in/rheanne-bande/"} target='_blank' className='text-decoration-none p-3'><i class="devicon-linkedin-plain contact-icon linkedin"></i></Link>
+                    <Link to={"https://github.com/Rhemb"} target='_blank' className='text-decoration-none p-3'><i class="devicon-github-original contact-icon"></i></Link>
+                </div>
+            </section>
         </div>
     )
 }
