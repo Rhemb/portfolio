@@ -111,9 +111,9 @@ const Main = () => {
             <section className='about-section'>
                 <div className="about-left">
                     <div className='about-paragraph'>
-                        <p>Hi, My name is Rheanne (re-ann)! I'm a healthcare turned software engineer who decided to try programming through various online resources where I found my passion of coding.</p>
+                        <p>Hi, My name is Rheanne (re-ann) and I'm a healthcare worker turned software engineer. I decided to try programming through various online resources and found my passion for coding!</p>
                         <p>The day I decided to make the switch, I attended Coding Dojo, an intensive fullstack software engineering bootcamp, where they provided me the structure and resources to kickstart my career in tech. Navigating my way to learning new languages and technologies has been a challenging yet-rewarding experience!</p>
-                        <p>Up to today, I have been continuing to learn new technologies alongside strengthening my skills. When I'm not in front of a computer I enjoy being outdoors, bowling, gaming, or spending time with my friends, family, and pets!</p>
+                        <p>Up to today, I have been continuing my education alongside strengthening my skills. When I'm not in front of a computer I enjoy being outdoors, bowling, gaming, or spending time with my friends, family, and pets!</p>
                     </div>
                     <div className='d-flex flex-column align-items-center'>
                         <p className='tech-header'>Technologies I Have Worked With</p>
@@ -203,7 +203,7 @@ const Main = () => {
                     </div>
                 <div className='send-email-section'>
                     <form id="send-email-form" ref={form} onSubmit={sendEmail}>
-                        <div className="mb-5 mt-4 d-flex flex-row justify-content-center">
+                        <div className="mb-5 d-flex flex-row justify-content-center">
                             <div className='d-flex flex-column me-4'>
                                 <label className="form-label" htmlFor='name'>Name (First and Last)</label>
                                 <input className="input" id='name' type="text" name="name" />
