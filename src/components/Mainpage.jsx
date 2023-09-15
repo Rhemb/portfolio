@@ -143,12 +143,13 @@ const Main = () => {
                 <div className='project-container'>
                     <div className='project-desc-container'>
                         <h1 className='project-title' style={{fontFamily:"Borel"}}>Wishfor__</h1>
-                        <p>A dark-themed website designed to curate a wishlist of items, organized into one convenient place. Built with React & Create React App</p>
+                        <p>A dark-themed website designed to curate a wishlist of items, organized into one convenient place. Built with React & Create React App. Tested using Postman.</p>
                         <p>Technologies Used:</p>
                         <ul>
                             <li className='mb-3'>+ MERN</li>
                             <li className='mb-3'>+ Create React App</li>
                             <li className='mb-3'>+ Bootstrap</li>
+                            <li className='mb-3'>+ Postman</li>
                             <li className='mb-5'>+ Balsamiq</li>
                         </ul>
                         <Link to={"https://github.com/Rhemb/wishfor__"} target='_blank'><button className='github-repo-btn'>Github Repo</button></Link>
