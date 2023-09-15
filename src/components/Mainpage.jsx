@@ -1,4 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import emailjs from 'emailjs-com';
+
 import RBGLogo from '../assets/images/RBG-login-page.png';
 import RBGicon from '../assets/images/gamepad-logo.png';
 import Wishfor from '../assets/images/wishfor-landing.png';
@@ -16,7 +18,9 @@ import { Link } from 'react-router-dom';
 const Main = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isVisible, setVisible] = useState(true);
+    const [success, setSuccess] = useState('');
     const domRef = useRef();
+    const form = useRef();
 
     const images = [ 
         personalImg,
@@ -42,9 +46,21 @@ const Main = () => {
         return () => observer.unobserve(domRef.current);
     }, []);
     
+    const sendEmail = (e) => {
+        e.preventDefault();
+    
+        emailjs.sendForm('service_lc8lmlr', 'template_iiadfp9', form.current, 'gsf0xkuf3wPLrj9Ay')
+            .then((result) => {
+                setSuccess('Email sent successfully!');
+                document.getElementById("send-email-form").reset();
+            }, (error) => {
+                console.log(error);
+            });
+    };
+
     return (
         <div id="main-page-container">
-            <nav>
+            <nav id="top">
                 <div className='d-flex flex-row justify-content-between align-items-center mx-5'>
                     <div>
                         <h1 className='mt-3'>RB</h1>
@@ -71,22 +87,22 @@ const Main = () => {
                     </div>
                     <div className='introduction-container'>
                         <ul className='d-flex flex-row p-3 mb-5'>
-                            <li><Link to={"https://www.linkedin.com/in/rheanne-bande/"} target='_blank' className='text-decoration-none p-3'><i class="devicon-linkedin-plain"></i></Link></li>
-                            <li><Link to={"https://github.com/Rhemb"} target='_blank' className='text-decoration-none p-3'><i class="devicon-github-original"></i></Link></li>
+                            <li><Link to={"https://www.linkedin.com/in/rheanne-bande/"} target='_blank' className='text-decoration-none p-3'><i className="devicon-linkedin-plain"></i></Link></li>
+                            <li><Link to={"https://github.com/Rhemb"} target='_blank' className='text-decoration-none p-3'><i className="devicon-github-original"></i></Link></li>
                         </ul>
                     </div>
                     <div className='technologies d-flex flex-column text-center'>
                         <p className='fs-2 text-white mb-5'>Top Technologies</p>
                         <ul className='d-flex flex-row justify-content-evenly'>
-                            <li><i class="tech-icon devicon-javascript-plain"></i></li>
-                            <li><i class="tech-icon devicon-python-plain"></i></li>
-                            <li><i class="tech-icon devicon-mysql-plain"></i></li>
-                            <li><i class="tech-icon devicon-html5-plain-wordmark"></i></li>
-                            <li><i class="tech-icon devicon-css3-plain-wordmark"></i></li>
-                            <li><i class="tech-icon devicon-bootstrap-plain"></i></li>
-                            <li><i class="tech-icon devicon-react-original"></i></li>
-                            <li><i class="tech-icon devicon-mongodb-plain-wordmark"></i></li>
-                            <li><i class="tech-icon devicon-express-original"></i></li>
+                            <li><i className="tech-icon devicon-javascript-plain"></i></li>
+                            <li><i className="tech-icon devicon-python-plain"></i></li>
+                            <li><i className="tech-icon devicon-mysql-plain"></i></li>
+                            <li><i className="tech-icon devicon-html5-plain-wordmark"></i></li>
+                            <li><i className="tech-icon devicon-css3-plain-wordmark"></i></li>
+                            <li><i className="tech-icon devicon-bootstrap-plain"></i></li>
+                            <li><i className="tech-icon devicon-react-original"></i></li>
+                            <li><i className="tech-icon devicon-mongodb-plain-wordmark"></i></li>
+                            <li><i className="tech-icon devicon-express-original"></i></li>
                         </ul>
                     </div>
                 </div>
@@ -179,12 +195,35 @@ const Main = () => {
                 </div>
             </section>
             <section className={`contact-section fade-in-section ${isVisible ? 'is-visible' : ''}`} ref={domRef} id='contact'>
-                <h1 className='contact-header d-flex align-items-center mb-3'>Lets Chat<img src={chatBubble} alt="chat bubble" className="chat-emoji" /></h1>
-                <p className='contact-text'>Thanks for taking the time to get to know me! Please feel free to reach out through my socials if you're interested in connecting</p>
-                <div className='d-flex flex-row'>
-                    <Link to={"https://www.linkedin.com/in/rheanne-bande/"} target='_blank' className='text-decoration-none p-3'><i class="devicon-linkedin-plain contact-icon linkedin"></i></Link>
-                    <Link to={"https://github.com/Rhemb"} target='_blank' className='text-decoration-none p-3'><i class="devicon-github-original contact-icon github"></i></Link>
+                    <h1 className='contact-header d-flex mb-4'>Lets Chat<img src={chatBubble} alt="chat bubble" className="chat-emoji" /></h1>
+                    <p className='contact-text'>Thanks for taking the time to get to know me! Please feel free to reach out through my socials or send me an email below if you're interested in connecting!</p>
+                    <div className='d-flex flex-row'>
+                        <Link to={"https://www.linkedin.com/in/rheanne-bande/"} target='_blank' className='text-decoration-none p-3'><i class="devicon-linkedin-plain contact-icon linkedin"></i></Link>
+                        <Link to={"https://github.com/Rhemb"} target='_blank' className='text-decoration-none p-3'><i class="devicon-github-original contact-icon github"></i></Link>
+                    </div>
+                <div className='send-email-section'>
+                    <form id="send-email-form" ref={form} onSubmit={sendEmail}>
+                        <div className="mb-5 mt-4 d-flex flex-row justify-content-center">
+                            <div className='d-flex flex-column me-4'>
+                                <label className="form-label" htmlFor='name'>Name (First and Last)</label>
+                                <input className="input" id='name' type="text" name="name" />
+                            </div>
+                            <div className='d-flex flex-column'>
+                                <label className='form-label'>Email</label>
+                                <input className="input" type="email" name="email" placeholder='ex: email@email.com'/>
+                            </div>
+                        </div>
+                        <div className='mb-4'>
+                            <label className='form-label'>Message</label>
+                            <textarea className="msg form-control" name="message" rows='4' placeholder='ex: Hi! Lets connect!' />
+                        </div>
+                        <div className='mb-3'>
+                            <button className='btn btn-light mt-3' type='submit'>Send</button>
+                        </div>
+                        <p>{success}</p>
+                    </form>
                 </div>
+            <a href="#top" className='mt-5 text-white'>Back to the Top</a>
             </section>
         </div>
     )
