@@ -100,19 +100,18 @@ section {
   background-color: #ffffff00;
   border-radius: 5px;
   background: #624a75;
-  /* color: #fff; */
+  color: #fff;
   height: 50px;
   width: 150px;
   font-size: 20px;
-  color: #fff;
 }
 
 .resume-btn:hover {
   background-color: #ffff;
   box-shadow: 0 0 20px #ffff;
+  border: 2px solid #624a75;
   color: #624a75;
   animation: fadeIn 1s;
-  border: 2px solid #624a75;
 }
 @keyframes fadeIn {
   0% { opacity: 0; }
@@ -161,16 +160,17 @@ section {
 .about-paragraph {
   width: 30em;
   font-size: 20px;
+  font-weight: 300;
 }
 
 .tech-header {
-  font-weight: 800;
-  font-size: 23px;
-  color: #deeafb;
+  /* font-weight: 800; */
+  font-size: 20px;
+  color: #fcfcfc;
 }
 
 .tech-list {
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 100;
 }
 
@@ -319,8 +319,8 @@ section {
   width: 50em;
   background: rgba( 255, 255, 255, 0.25 );
   box-shadow: 0 0px 32px 0 rgba(247, 247, 247, 0.563);
-  backdrop-filter: blur( 3.5px );
   -webkit-backdrop-filter: blur( 3.5px );
+  backdrop-filter: blur( 0px );
   border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
 }

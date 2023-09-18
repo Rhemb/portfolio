@@ -10,6 +10,7 @@ import personalImg from '../assets/images/personal-image.jpg';
 import crochet from '../assets/images/crochet.jpg';
 import sf from '../assets/images/sf.jpg';
 import stella from '../assets/images/stella.jpg';
+import resume from '../assets/RB-Resume.pdf';
 
 
 import React, {useEffect, useRef, useState} from 'react';
@@ -80,9 +81,9 @@ const Main = () => {
                         <h1 className="hello-world">Hello, world!<img src={waveEmoji} alt='wave emoji' className='emoji mx-2' /></h1>
                         <h1 className='name'>I'm Rheanne Bande </h1>
                         <h1 className='intro-3rd-row mb-4' style={{color: "#28104E"}}>I am a <span className='gradient-text'>Software Developer</span></h1>
-                        <p className='small-bio mb-4'>Healthcare transitioned Software Developer based in Bay Area, CA</p>
+                        <p className='small-bio mb-4'>Healthcare transitioned Software Developer based in Bay Area, CA specializing in QA and Front End Development.</p>
                         <div className='d-flex justify-content-center align-items-center mb-4'>
-                            <button className='resume-btn'>Resume</button>
+                            <button className='resume-btn'><a className="resume text-decoration-none" href={resume} title='resume' download />Resume</button>
                         </div>
                     </div>
                     <div className='introduction-container'>
@@ -113,25 +114,33 @@ const Main = () => {
                     <div className='about-paragraph'>
                         <p>Hi, My name is Rheanne (re-ann) and I'm a healthcare worker turned software engineer. I decided to try programming through various online resources and found my passion for coding!</p>
                         <p>The day I decided to make the switch, I attended Coding Dojo, an intensive fullstack software engineering bootcamp, where they provided me the structure and resources to kickstart my career in tech. Navigating my way to learning new languages and technologies has been a challenging yet-rewarding experience!</p>
-                        <p>Up to today, I have been continuing my education alongside strengthening my skills. When I'm not in front of a computer I enjoy being outdoors, bowling, gaming, or spending time with my friends, family, and pets!</p>
+                        <p>Up to today, I have been continuing my education alongside strengthening my skills. When I'm not in front of a computer I enjoy being outdoors, crocheting, bowling, gaming, or spending time with my friends, family, and pets!</p>
                     </div>
-                    <div className='d-flex flex-column align-items-center'>
-                        <p className='tech-header'>Technologies I Have Worked With</p>
+                    <div className='d-flex flex-column'>
+                        <p className='tech-header'>Technologies I have worked with</p>
                         <div className='tech-list d-flex flex-row'>
                             <ul>
                                 <li>- Javascript </li>
                                 <li>- Python</li>
                                 <li>- Ruby</li>
-                                <li>- MERN</li>
+                                <li>- MySQL</li>
+                            </ul>
+                            <ul>
+                                <li>- RSpec</li>
+                                <li>- Postman</li>
                                 <li>- Git</li>
+                                <li>- MongoDB</li>
+                            </ul>
+                            <ul>
+                                <li>- React</li>
+                                <li>- Express</li>
+                                <li>- Vite</li>
                                 <li>- Create React App</li>
                             </ul>
                             <ul>
-                                <li>- Vite</li>
+                                <li>- Node.js</li>
                                 <li>- Bootstrap</li>
-                                <li>- Postman</li>
                                 <li>- Flask</li>
-                                <li>- MySQL</li>
                                 <li>- Balsamiq</li>
                             </ul>
                         </div>
@@ -195,7 +204,7 @@ const Main = () => {
                 </div>
             </section>
             <section className={`contact-section fade-in-section ${isVisible ? 'is-visible' : ''}`} ref={domRef} id='contact'>
-                    <h1 className='contact-header d-flex mb-4'>Lets Chat<img src={chatBubble} alt="chat bubble" className="chat-emoji" /></h1>
+                    <h1 className='contact-header d-flex mb-4 mt-4'>Lets Chat<img src={chatBubble} alt="chat bubble" className="chat-emoji" /></h1>
                     <p className='contact-text'>Thanks for taking the time to get to know me! Please feel free to reach out through my socials or send me an email below if you're interested in connecting!</p>
                     <div className='d-flex flex-row'>
                         <Link to={"https://www.linkedin.com/in/rheanne-bande/"} target='_blank' className='text-decoration-none p-3'><i class="devicon-linkedin-plain contact-icon linkedin"></i></Link>
@@ -223,7 +232,7 @@ const Main = () => {
                         <p>{success}</p>
                     </form>
                 </div>
-            <a href="#top" className='mt-5 text-white'>Back to the Top</a>
+            <a href="#top" className='mt-4 mb-5 text-white'>Back to the Top</a>
             </section>
         </div>
     )
