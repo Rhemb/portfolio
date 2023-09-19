@@ -8,7 +8,7 @@ function App() {
     <BrowserRouter>
       <div className='bg'>
           <Routes>
-            <Route path='/' element={<Main />} />
+            <Route path='/portfolio' element={<Main />} />
           </Routes>
       </div>
     </BrowserRouter>
